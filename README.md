@@ -31,7 +31,8 @@ curl -X GET "https://api.iri.nersc.gov/api/v1/account/projects" -H "accept: appl
 
 
 # March 16
-UPLOAD
+## UPLOAD
+
 curl -X POST \
   "https://api.iri.nersc.gov/api/v1/filesystem/upload/43d8f6c0-f900-48ce-b267-73714103f4ac?path=%2Fpscratch%2Fsd%2Fa%2Fatif%2F" \
   -H "accept: application/json" \
@@ -39,16 +40,19 @@ curl -X POST \
   -H "Content-Type: multipart/form-data" \
   -F "file=@upload_to_perlmutter.py;type=text/x-python-script"
 
-DOWNLOAD
+## DOWNLOAD
+
 curl -X GET \
   "https://api.iri.nersc.gov/api/v1/filesystem/download/43d8f6c0-f900-48ce-b267-73714103f4ac?path=%2Fpscratch%2Fsd%2Fa%2Fatif%2Ffm4npp%2Famsc-d2%2Ftrack_ids.npz" \
   -H "accept: application/json" \
   -H "Authorization: Bearer $(python get_sf_token.py)"
 
-# Watch returned URI with
+# # Watch returned URI with
+
 curl -H "Authorization: Bearer $(python get_sf_token.py)" "https://api.iri.nersc.gov/api/v1/task/<task_id>"
 
-# Not yet tested
+# SUBMIT JOB: Not yet tested
+
 curl -X 'POST' \
   'https://api.iri.nersc.gov/api/v1/compute/job/94351904-6dba-4c16-b5cd-fbd280d8615b' \
   -H 'accept: application/json' \
