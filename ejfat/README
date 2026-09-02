@@ -1,3 +1,18 @@
 
 1. First find link speed of device port(s)
 bash print_link_speed_2way_mtu.sh 192.188.29.6
+
+2. Check Status of LBs and reserve one, save output in INSTANCE_URI
+#Use admin URI as EJFAT_URI
+podman-hpc run -e EJFAT_URI=$EJFAT_URI --rm --network host docker.io/ibaldin/e2sar:latest lbadm --overview -v
+
+podman-hpc run -e EJFAT_URI=$EJFAT_URI --rm --network host   docker.io/ibaldin/e2sar:latest   lbadm --reserve --lbname test_perlmutter -d 04
+
+podman-hpc run -e EJFAT_URI=$EJFAT_URI_INST --rm --network host   docker.io/ibaldin/e2sar:latest   lbadm --free -i 532
+
+# Launch receiver on Perlmutter
+
+make sure instance URI is in INSTANCE_URI
+
+bash minimal_receiver.sh --duration 60 --port 20000
+bash minimal_sender_apptainer.sh --num 100 --rate 0.01 --mtu 1500
