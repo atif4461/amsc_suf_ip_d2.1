@@ -164,6 +164,7 @@ CMD=(
     --threads="$RECV_THREADS"
     --deq="$DEQUEUE_THREADS"
     --bufsize="$BUFFER_SIZE"
+    --period=100
 )
 
 # Add -v flag if SSL verification should be skipped
@@ -201,5 +202,3 @@ CONTAINER_EXIT_CODE=${PIPESTATUS[0]}
 
 # Exit with container's exit code (trap will handle END_TIME/EXIT_CODE logging)
 exit $CONTAINER_EXIT_CODE
-~
-~
