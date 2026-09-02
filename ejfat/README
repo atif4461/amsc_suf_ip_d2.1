@@ -1,0 +1,3 @@
+
+1. First find link speed of device port(s)
+bash print_link_speed_2way_mtu.sh 192.188.29.6
