@@ -38,8 +38,8 @@ DATA_PORT="10000"
 DURATION="0"
 USE_IPV6="false"
 SKIP_SSL_VERIFY="false"
-RECV_THREADS="16"
-DEQUEUE_THREADS="16"
+RECV_THREADS="1"
+DEQUEUE_THREADS="4"
 BUFFER_SIZE="134217728"
 
 # Parse command line arguments
@@ -176,6 +176,7 @@ CMD=(
     --threads="$RECV_THREADS"
     --deq="$DEQUEUE_THREADS"
     --bufsize="$BUFFER_SIZE"
+    --period=100
 )
 
 # Add -v flag if SSL verification should be skipped
