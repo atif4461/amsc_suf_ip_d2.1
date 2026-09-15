@@ -27,7 +27,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Default values
 EJFAT_URI="${EJFAT_URI:-}"
-E2SAR_IMAGE="${E2SAR_IMAGE:-docker.io/ibaldin/e2sar:latest}"
+E2SAR_IMAGE="${E2SAR_IMAGE:-docker.io/ibaldin/e2sar:0.4.0rc1}"
 DATA_PORT="10000"
 DURATION="0"
 USE_IPV6="false"

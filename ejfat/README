@@ -4,11 +4,11 @@ bash print_link_speed_2way_mtu.sh 192.188.29.6
 
 2. Check Status of LBs and reserve one, save output in INSTANCE_URI
 #Use admin URI as EJFAT_URI
-podman-hpc run -e EJFAT_URI=$EJFAT_URI --rm --network host docker.io/ibaldin/e2sar:latest lbadm --overview -v
+podman-hpc run -e EJFAT_URI=$EJFAT_URI --rm --network host docker.io/ibaldin/e2sar:0.4.0rc1 lbadm --overview -v
 
-podman-hpc run -e EJFAT_URI=$EJFAT_URI --rm --network host   docker.io/ibaldin/e2sar:latest   lbadm --reserve --lbname test_perlmutter -d 04
+podman-hpc run -e EJFAT_URI=$EJFAT_URI --rm --network host docker.io/ibaldin/e2sar:0.4.0rc1 lbadm --reserve --lbname nersc0-suf-ip-d2p1 -d 04
 
-podman-hpc run -e EJFAT_URI=$EJFAT_URI_INST --rm --network host   docker.io/ibaldin/e2sar:latest   lbadm --free -i 532
+podman-hpc run -e EJFAT_URI=$EJFAT_URI_INST --rm --network host docker.io/ibaldin/e2sar:0.4.0rc1 lbadm --free -i 532
 
 # Launch receiver on Perlmutter
 
