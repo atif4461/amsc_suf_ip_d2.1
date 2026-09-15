@@ -36,7 +36,7 @@ MEMORY_MONITOR_PID=""
 
 # Default values
 EJFAT_URI="${EJFAT_URI:-}"
-SIF_PATH="${SIF_PATH:-e2sar_0.4.0a1.sif}"
+SIF_PATH="${SIF_PATH:-e2sar_0.4.0rc1.sif}"
 RATE="1"
 LENGTH="1048576"
 NUM="100"

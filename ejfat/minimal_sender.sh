@@ -30,7 +30,7 @@ MEMORY_MONITOR_PID=""
 
 # Default values
 EJFAT_URI="${EJFAT_URI:-}"
-E2SAR_IMAGE="${E2SAR_IMAGE:-ibaldin/e2sar:0.3.1a3}"
+E2SAR_IMAGE="${E2SAR_IMAGE:-ibaldin/e2sar:0.4.0rc1}"
 RATE="1"
 LENGTH="1048576"
 NUM="100"

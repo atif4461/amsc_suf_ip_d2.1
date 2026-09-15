@@ -33,7 +33,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Default values
 EJFAT_URI="${EJFAT_URI:-}"
-SIF_PATH="${SIF_PATH:-e2sar_0.3.1a3.sif}"
+SIF_PATH="${SIF_PATH:-e2sar_0.4.0rc1.sif}"
 DATA_PORT="10000"
 DURATION="0"
 USE_IPV6="false"
@@ -93,7 +93,7 @@ done
 if [[ ! -f "$SIF_PATH" ]]; then
     echo "ERROR: SIF image not found at $SIF_PATH"
     echo "Pull it first, e.g.:"
-    echo "  apptainer pull $SIF_PATH docker://ibaldin/e2sar:latest"
+    echo "  apptainer pull $SIF_PATH docker://ibaldin/e2sar:0.4.0rc1"
     exit 1
 fi
 
